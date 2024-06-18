@@ -19,7 +19,13 @@ import java.util.List;
 public interface VaultBlockEntityServerInvoker {
 
     /**
-     * Invoker for the generateLoot() method
+     * Invoker for the generateLoot() method of the VaultBlockEntity.Server inner class.
+     * Generates the loot inside the vault.
+     * @param world The server world in which the vault exists
+     * @param config The vault config of the vault that is generating loot
+     * @param pos The position of the vault
+     * @param player The player trying to open the vault
+     * @return The generated loot
      */
     @Invoker("generateLoot")
     public static List<ItemStack> invokeGenerateLoot(ServerWorld world, VaultConfig config, BlockPos pos, PlayerEntity player) {
@@ -27,7 +33,15 @@ public interface VaultBlockEntityServerInvoker {
     }
 
     /**
-     * Invoker for the unlock() method
+     * Invoker for the unlock() method of the VaultBlockEntity.Server inner class.
+     * Unlocks the vault.
+     * @param world The server world in which the vault exists
+     * @param state The current block state of the vault
+     * @param pos The position of the vault
+     * @param config The vault config of the vault that is being unlocked
+     * @param serverData The server data
+     * @param sharedData The shared data
+     * @param itemsToEject The list of ItemStacks to be ejected
      */
     @Invoker("unlock")
     public static void invokeUnlock(ServerWorld world, BlockState state, BlockPos pos, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData, List<ItemStack> itemsToEject) {
@@ -35,7 +49,12 @@ public interface VaultBlockEntityServerInvoker {
     }
 
     /**
-     * Invoker for the playFailedUnlockSound() method
+     * Invoker for the playFailedUnlockSound() method of the VaultBlockEntity.Server inner class.
+     * Plays the failed-unlock sound.
+     * @param world The server world in which the vault exists
+     * @param serverData The vault server data of the vault
+     * @param pos The position of the vault
+     * @param sound The sound event
      */
     @Invoker("playFailedUnlockSound")
     public static void playFailedUnlockSound(ServerWorld world, VaultServerData serverData, BlockPos pos, SoundEvent sound) {
@@ -43,7 +62,11 @@ public interface VaultBlockEntityServerInvoker {
     }
 
     /**
-     * Invoker for the isValidKey() method
+     * Invoker for the isValidKey() method of the VaultBlockEntity.Server inner class.
+     * Checks if the key is valid and fitting for this type of vault
+     * @param config The vault config of the vault
+     * @param stack The key ItemStack
+     * @return True, if the key is valid and fitting
      */
     @Invoker("isValidKey")
     public static boolean isValidKey(VaultConfig config, ItemStack stack) {
