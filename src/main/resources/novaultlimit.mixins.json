@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.skytendo.novaultlimit.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"VaultBlockEntityServerMixin",
+		"VaultBlockEntityServerInvoker",
+		"VaultStateMixin",
+		"VaultServerDataMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
