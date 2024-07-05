@@ -42,8 +42,9 @@ public abstract class VaultBlockEntityServerMixin {
             List<ItemStack> list = VaultBlockEntityServerInvoker.invokeGenerateLoot(world, config, pos, player);
             if (!list.isEmpty()) {
                 player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-                stack.decrementUnlessCreative(config.keyItem().getCount(), player);
+                stack.decrementUnlessCreative(1, player);
                 VaultBlockEntityServerInvoker.invokeUnlock(world, state, pos, config, serverData, sharedData, list);
+                ci.cancel();
             }
         }
         return;

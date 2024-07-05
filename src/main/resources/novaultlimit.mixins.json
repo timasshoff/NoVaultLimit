@@ -5,7 +5,7 @@
 	"mixins": [
 		"VaultBlockEntityServerMixin",
 		"VaultBlockEntityServerInvoker",
-		"VaultStateMixin",
+		"VaultSharedDataMixin",
 		"VaultServerDataMixin"
 	],
 	"injectors": {
