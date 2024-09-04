@@ -28,7 +28,7 @@ public interface VaultBlockEntityServerInvoker {
      * @return The generated loot
      */
     @Invoker("generateLoot")
-    public static List<ItemStack> invokeGenerateLoot(ServerWorld world, VaultConfig config, BlockPos pos, PlayerEntity player) {
+    static List<ItemStack> invokeGenerateLoot(ServerWorld world, VaultConfig config, BlockPos pos, PlayerEntity player) {
         throw new AssertionError();
     }
 
@@ -44,7 +44,7 @@ public interface VaultBlockEntityServerInvoker {
      * @param itemsToEject The list of ItemStacks to be ejected
      */
     @Invoker("unlock")
-    public static void invokeUnlock(ServerWorld world, BlockState state, BlockPos pos, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData, List<ItemStack> itemsToEject) {
+    static void invokeUnlock(ServerWorld world, BlockState state, BlockPos pos, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData, List<ItemStack> itemsToEject) {
         throw new AssertionError();
     }
 
@@ -57,7 +57,7 @@ public interface VaultBlockEntityServerInvoker {
      * @param sound The sound event
      */
     @Invoker("playFailedUnlockSound")
-    public static void playFailedUnlockSound(ServerWorld world, VaultServerData serverData, BlockPos pos, SoundEvent sound) {
+    static void playFailedUnlockSound(ServerWorld world, VaultServerData serverData, BlockPos pos, SoundEvent sound) {
         throw new AssertionError();
     }
 
@@ -69,7 +69,7 @@ public interface VaultBlockEntityServerInvoker {
      * @return True, if the key is valid and fitting
      */
     @Invoker("isValidKey")
-    public static boolean isValidKey(VaultConfig config, ItemStack stack) {
+    static boolean isValidKey(VaultConfig config, ItemStack stack) {
         throw new AssertionError();
     }
 }
