@@ -39,7 +39,7 @@ public abstract class VaultBlockEntityServerMixin {
         if (!VaultBlockEntityServerInvoker.isValidKey(config, stack)) {
             VaultBlockEntityServerInvoker.playFailedUnlockSound(world, serverData, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM_FAIL);
         } else {
-            List<ItemStack> list = VaultBlockEntityServerInvoker.invokeGenerateLoot(world, config, pos, player, stack);
+            List<ItemStack> list = VaultBlockEntityServerInvoker.invokeGenerateLoot(world, config, pos, player);
             if (!list.isEmpty()) {
                 player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
                 stack.decrementUnlessCreative(1, player);
