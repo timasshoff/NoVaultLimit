@@ -25,11 +25,10 @@ public interface VaultBlockEntityServerInvoker {
      * @param config The vault config of the vault that is generating loot
      * @param pos The position of the vault
      * @param player The player trying to open the vault
-     * @param key The key
      * @return The generated loot
      */
     @Invoker("generateLoot")
-    static List<ItemStack> invokeGenerateLoot(ServerWorld world, VaultConfig config, BlockPos pos, PlayerEntity player, ItemStack key) {
+    static List<ItemStack> invokeGenerateLoot(ServerWorld world, VaultConfig config, BlockPos pos, PlayerEntity player) {
         throw new AssertionError();
     }
 
