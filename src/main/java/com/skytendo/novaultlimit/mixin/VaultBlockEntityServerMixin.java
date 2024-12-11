@@ -34,7 +34,7 @@ public abstract class VaultBlockEntityServerMixin {
             "Lnet/minecraft/block/vault/VaultServerData;" +
             "Lnet/minecraft/block/vault/VaultSharedData;" +
             "Lnet/minecraft/entity/player/PlayerEntity;" +
-            "Lnet/minecraft/item/ItemStack;)V", at = @At("HEAD"))
+            "Lnet/minecraft/item/ItemStack;)V", at = @At("HEAD"), cancellable = true)
     private static void tryUnlock(ServerWorld world, BlockPos pos, BlockState state, VaultConfig config, VaultServerData serverData, VaultSharedData sharedData, PlayerEntity player, ItemStack stack, CallbackInfo ci) {
         if (!VaultBlockEntityServerInvoker.isValidKey(config, stack)) {
             VaultBlockEntityServerInvoker.playFailedUnlockSound(world, serverData, pos, SoundEvents.BLOCK_VAULT_INSERT_ITEM_FAIL);
